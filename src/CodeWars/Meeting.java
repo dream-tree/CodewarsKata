@@ -39,8 +39,8 @@ public class Meeting {
                 "("
                 + lastAndFirst[1].toUpperCase()
                 + ", "
-                + lastAndFirst[0].toUpperCase())
-                + ")");
+                + lastAndFirst[0].toUpperCase()
+                + ")"));
          Stream<String> sortedInvitedPeople = separatedNamesWithBraces.sorted();
          return sortedInvitedPeople.reduce(
                  (String lastName, String firstName) -> (lastName + firstName)).get();
@@ -50,16 +50,16 @@ public class Meeting {
     public static String meeting3(String unsortedInvitedPeople) {
          return         
          Arrays.stream(unsortedInvitedPeople.toUpperCase().split(";"))
-         .map(names -> names.split(":"))
-         .map(
-                 lastAndFirst -> (
-                 "("
-                 + lastAndFirst[1]
-                 + ", "
-                 + lastAndFirst[0]
-                 + ")"))
-        .sorted()
-        .reduce((String lastName, String firstName) -> (lastName + firstName))
-        .get();
+             .map(names -> names.split(":"))
+             .map(
+                     lastAndFirst -> (
+                     "("
+                     + lastAndFirst[1]
+                     + ", "
+                     + lastAndFirst[0]
+                     + ")"))
+            .sorted()
+            .reduce((String lastName, String firstName) -> (lastName + firstName))
+            .get();
     }
 }
