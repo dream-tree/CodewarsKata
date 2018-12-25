@@ -11,7 +11,7 @@ public class Meeting {
                 + "Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
         System.out.println(meeting1(invitedPeople));
         System.out.println(meeting2(invitedPeople));
-        System.out.println(meeting3(invitedPeople));       
+        System.out.println(meeting3(invitedPeople));
     }
 
     // "manual"
@@ -29,37 +29,39 @@ public class Meeting {
                 .reduce((String x, String y) -> (x + y));
         return temp.get();
     }
-    
+
     // preparing to stream resolution
     public static String meeting2(String unsortedInvitedPeople) {
         Stream<String> separatedPeople = Arrays.stream(unsortedInvitedPeople.split(";"));
         Stream<String[]> separatedNames = separatedPeople.map(names -> names.split(":"));
         Stream<String> separatedNamesWithBraces = separatedNames.map(
-                lastAndFirst -> (
-                "("
-                + lastAndFirst[1].toUpperCase()
-                + ", "
-                + lastAndFirst[0].toUpperCase()
-                + ")"));
-         Stream<String> sortedInvitedPeople = separatedNamesWithBraces.sorted();
-         return sortedInvitedPeople.reduce(
-                 (String lastName, String firstName) -> (lastName + firstName)).get();
+            lastAndFirst -> (
+                    "("
+                    + lastAndFirst[1].toUpperCase()
+                    + ", "
+                    + lastAndFirst[0].toUpperCase()
+                    + ")"));
+        Stream<String> sortedInvitedPeople = separatedNamesWithBraces.sorted();
+        return sortedInvitedPeople.reduce(
+            (String onePerson, String anotherPerson)
+                -> (onePerson + anotherPerson)).get();
     }
-    
+
     // "real" stream resolution
     public static String meeting3(String unsortedInvitedPeople) {
-         return         
-         Arrays.stream(unsortedInvitedPeople.toUpperCase().split(";"))
-             .map(names -> names.split(":"))
-             .map(
-                     lastAndFirst -> (
-                     "("
-                     + lastAndFirst[1]
-                     + ", "
-                     + lastAndFirst[0]
-                     + ")"))
-            .sorted()
-            .reduce((String lastName, String firstName) -> (lastName + firstName))
-            .get();
+        return
+                Arrays.stream(unsortedInvitedPeople.toUpperCase().split(";"))
+                    .map(names -> names.split(":"))
+                    .map(
+                        lastAndFirst -> (
+                            "("
+                            + lastAndFirst[1]
+                            + ", "
+                            + lastAndFirst[0]
+                            + ")"))
+                    .sorted()
+                    .reduce((String onePerson, String anotherPerson)
+                        -> (onePerson + anotherPerson))
+                    .get();
     }
 }
