@@ -44,7 +44,8 @@ public class Meeting {
         Stream<String> sortedInvitedPeople = separatedNamesWithBraces.sorted();
         return sortedInvitedPeople.reduce(
             (String onePerson, String anotherPerson)
-                -> (onePerson + anotherPerson)).get();
+                -> (onePerson + anotherPerson))
+                .get();
     }
 
     // "real" stream resolution
