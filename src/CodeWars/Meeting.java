@@ -30,7 +30,7 @@ public class Meeting {
         return temp.get();
     }
 
-    // preparing to stream resolution
+    // preparing to "real" stream resolution
     public static String meeting2(String unsortedInvitedPeople) {
         Stream<String> separatedPeople = Arrays.stream(unsortedInvitedPeople.split(";"));
         Stream<String[]> separatedNames = separatedPeople.map(names -> names.split(":"));
