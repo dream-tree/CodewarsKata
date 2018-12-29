@@ -15,6 +15,6 @@ class CountTheDigitTest {
         assertEquals(CountTheDigit.nbDig(5750, 0), 4700);
         assertEquals(CountTheDigit.nbDig(11011, 2), 9481);
         assertEquals(CountTheDigit.nbDig(12224, 8), 7733);
-        assertEquals(CountTheDigit.nbDig(11549, 1), 11905);    
+        assertEquals(CountTheDigit.nbDig(11549, 1), 11905);
     }
 }
