@@ -7,7 +7,8 @@ public class ReverseOrRotate {
     public static void main(String[] args) {
     }
 
-    public static String revRot(String stringForChunking, int requiredChunkSize) {
+    public static String reverseOrRotate(
+            String stringForChunking, int requiredChunkSize) {
         resultString = "";
         if (stringForChunking.isEmpty() || requiredChunkSize <= 0) {
             return resultString;
@@ -27,9 +28,10 @@ public class ReverseOrRotate {
         return resultString;
     }
 
-    public static void countSumOfCubes(String chunkedStringOfDigits, int sz) {
+    public static void countSumOfCubes(
+            String chunkedStringOfDigits, int requiredChunkSize) {
         int sumOfCubes = 0;
-        for (int i = 0; i < sz; i++) {
+        for (int i = 0; i < requiredChunkSize; i++) {
             int digit = Integer.parseInt(String.valueOf(
                     chunkedStringOfDigits.charAt(i)));
             sumOfCubes += digit * digit;
