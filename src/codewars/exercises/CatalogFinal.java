@@ -3,7 +3,7 @@ package codewars.exercises;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// exercise or rather test cases suggest looking for 'saw' gives: 'saw', 'saw for metal", "cine saw" etc
+// test cases show that looking for 'saw' should give such results: 'saw', 'saw for metal", "cine saw" etc.
 
 public class CatalogFinal {
 
