@@ -1,5 +1,3 @@
-package cw;
-
 public class SetAlarm {
 
     public static void main(String[] args) {
