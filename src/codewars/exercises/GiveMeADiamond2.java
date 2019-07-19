@@ -33,7 +33,7 @@ public class GiveMeADiamond2 {
         }
 
         StringBuilder diamond = new StringBuilder();
-        buildUpperPartOfDiamod(n, diamond);
+        buildUpperPartOfDiamond(n, diamond);
         buildLowerPartOfDiamond(n, diamond);
         return diamond.toString();
     }
@@ -64,7 +64,7 @@ public class GiveMeADiamond2 {
         return diamond;
     }
 
-    private static StringBuilder buildUpperPartOfDiamod(int n, StringBuilder diamond) {
+    private static StringBuilder buildUpperPartOfDiamond(int n, StringBuilder diamond) {
         int countUpperLines = n / 2;         // (with middle line)   // increment
         int countUpperLinesSpaces = n / 2;   // decrement
         int countUpperLinesAsterisks = 1;
