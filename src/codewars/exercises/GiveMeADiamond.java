@@ -41,24 +41,24 @@ public class GiveMeADiamond {
     private static String buildLowerPartOfDiamond(int n, String diamond) {
         int countLowerLines = n / 2;   // (with middle line)   // increment
         int countLowerLinesSpaces = 1;
-        int countLowerLinesAsterices = n - 2;
+        int countLowerLinesAsterisks = n - 2;
 
         // for 7 lines total: 1st line has 4 signs (n/2 + 1), 2nd line has 5 signs ... middle line has 7 (n) signs; increment
         // for 7 lines total: 1st line has 3 spaces (n/2), 2nd line has 2 spaces (n/2 - 1)
 
         for (int i = countLowerLines + 1; i < n; i++) {   // number of lines
             int tempCountSpaces = countLowerLinesSpaces;
-            int tempCountAsterices = countLowerLinesAsterices;
+            int tempCountAsterisks = countLowerLinesAsterisks;
             while (tempCountSpaces > 0) {
                 diamond += " ";
                 tempCountSpaces--;
             }
-            while (tempCountAsterices > 0) {
+            while (tempCountAsterisks > 0) {
                 diamond += "*";
-                tempCountAsterices--;
+                tempCountAsterisks--;
             }
             countLowerLinesSpaces += 1;
-            countLowerLinesAsterices -= 2;
+            countLowerLinesAsterisks -= 2;
             diamond += "\n";
         }
         return diamond;
@@ -67,21 +67,21 @@ public class GiveMeADiamond {
     private static String buildUpperPartOfDiamod(int n, String diamond) {
         int countUpperLines = n / 2;         // (with middle line)   // increment
         int countUpperLinesSpaces = n / 2;   // decrement
-        int countUpperLinesAsterices = 1;
+        int countUpperLinesAsterisks = 1;
 
         for (int i = countUpperLines; i < n; i++) {   // number of upper lines + middle line
                 int tempCountSpaces = countUpperLinesSpaces;
-                int tempCountAsterices = countUpperLinesAsterices;
+                int tempCountAsterisks = countUpperLinesAsterisks;
                 while (tempCountSpaces > 0) {
                     diamond += " ";
                     tempCountSpaces--;
                 }
-                while (tempCountAsterices > 0) {
+                while (tempCountAsterisks > 0) {
                    diamond += "*";
-                   tempCountAsterices--;
+                   tempCountAsterisks--;
                 }
                 countUpperLinesSpaces--;
-                countUpperLinesAsterices+=2;
+                countUpperLinesAsterisks+=2;
             diamond += "\n";
         }
         return diamond;
